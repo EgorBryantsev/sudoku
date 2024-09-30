@@ -3,8 +3,6 @@ import java.awt.Point;
 /**
  * SudokuSolver.
  * 
- * 
- * 
  * @author Milan Versteegh
  * @ID 2136279
  * @author Egor Bryantsev

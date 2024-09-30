@@ -3,8 +3,6 @@ import java.awt.Point;
 /**
  * SudokuGrid.
  * 
- * 
- * 
  * @author Milan Versteegh
  * @ID 2136279
  * @author Egor Bryantsev
