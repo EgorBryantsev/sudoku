@@ -1,0 +1,93 @@
+import java.awt.Point;
+
+public class SudokuGrid {
+    private static final int SIZE = 9;
+    private static final int DIGIT_RANGE = 9;
+
+    private int[][] grid;
+    private int rEmpty = -1, cEmpty = -1;
+
+    public SudokuGrid(int[][] sudoku) {
+        grid = sudoku;
+    }
+
+    public SudokuGrid copy() {
+        int[][] newGrid = new int[SIZE][SIZE];
+        for (int r = 0; r < SIZE; r++) {
+            for (int c = 0; c < SIZE; c++) {
+                newGrid[r][c] = this.grid[r][c];
+            }
+        }
+        return new SudokuGrid(newGrid);
+    }
+
+    public Point findEmptyCell() {
+        for (int r = 0; r < SIZE; r++) {
+            for (int c = 0; c < SIZE; c++) {
+                if (grid[r][c] == 0) {
+                    return new Point(r, c);  
+                }
+            }
+        }
+        return null; 
+    }
+
+    public void print() {
+        System.out.println("+-----------------------+");
+        for (int r = 0; r < SIZE; r++) {
+            for (int c = 0; c < SIZE; c++) {
+                // Print grid with spacing and dividers
+                if (c == 0 || c == 3 || c == 6) {
+                    System.out.print("| ");
+                }
+                System.out.print(grid[r][c] == 0 ? " " : grid[r][c]);
+                System.out.print(" ");
+            }
+            System.out.print("| ");
+            System.out.println();  // Move to the next row
+            if (r == 2 || r == 5 || r == 8) {
+                System.out.println("+-----------------------+");
+            }
+        }
+        System.out.println();
+    }
+
+    public void fillCell(int r, int c, int d) {
+        grid[r][c] = d;
+    }
+
+    public boolean givesConflict(int r, int c, int d) {
+        return rowConflict(r, d) || colConflict(c, d) || boxConflict(r, c, d);
+    }
+
+    private boolean rowConflict(int r, int d) {
+        for (int c = 0; c < SIZE; c++) {
+            if (grid[r][c] == d) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private boolean colConflict(int c, int d) {
+        for (int r = 0; r < SIZE; r++) {
+            if (grid[r][c] == d) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private boolean boxConflict(int r, int c, int d) {
+        int rowStart = (r / 3) * 3;
+        int colStart = (c / 3) * 3;
+        for (int rq = 0; rq < 3; rq++) {
+            for (int cq = 0; cq < 3; cq++) {
+                if (grid[rowStart + rq][colStart + cq] == d) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+}
