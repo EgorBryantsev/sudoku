@@ -7,15 +7,15 @@ public class SudokuGrid {
     private int[][] grid;
     private int rEmpty = -1, cEmpty = -1;
 
+    public SudokuGrid() {
+        grid = new int[SIZE][SIZE];  // Initializes an empty grid
+    }
+ 
     public SudokuGrid(int[][] sudoku) {
         grid = new int[SIZE][SIZE];
         for (int r = 0; r < SIZE; r++) {
             System.arraycopy(sudoku[r], 0, grid[r], 0, SIZE);
         }
-    }
-
-    public SudokuGrid() {
-        grid = new int[SIZE][SIZE];  // Initializes an empty grid
     }
 
     public SudokuGrid copy() {
@@ -49,7 +49,7 @@ public class SudokuGrid {
                 System.out.print(grid[r][c] == 0 ? " " : grid[r][c]);
                 System.out.print(" ");
             }
-            System.out.print("|");
+            System.out.print("| ");
             System.out.println(); 
             if (r == 2 || r == 5 || r == 8) {
                 System.out.println("+-----------------------+");
