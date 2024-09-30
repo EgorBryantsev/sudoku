@@ -1,11 +1,11 @@
 import java.awt.Point;
 
 public class SudokuGrid {
-    private static final int SIZE = 9;
-    private static final int DIGIT_RANGE = 9;
+    public static final int SIZE = 9;
+    public static final int DIGIT_RANGE = 9;
 
-    private int[][] grid;
-    private int rEmpty = -1, cEmpty = -1;
+    public int[][] grid;
+    public int rEmpty = -1, cEmpty = -1;
 
     public SudokuGrid() {
         grid = new int[SIZE][SIZE];  // Initializes an empty grid
@@ -40,19 +40,19 @@ public class SudokuGrid {
     }
 
     public void print() {
-        System.out.println("+-----------------------+");
+        System.out.println("+-----------------+");
         for (int r = 0; r < SIZE; r++) {
             for (int c = 0; c < SIZE; c++) {
                 if (c == 0 || c == 3 || c == 6) {
-                    System.out.print("| ");
+                    System.out.print("|");
                 }
                 System.out.print(grid[r][c] == 0 ? " " : grid[r][c]);
                 System.out.print(" ");
             }
-            System.out.print("| ");
+            System.out.print("|");
             System.out.println(); 
             if (r == 2 || r == 5 || r == 8) {
-                System.out.println("+-----------------------+");
+                System.out.println("+-----------------+");
             }
         }
         System.out.println();
