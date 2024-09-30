@@ -43,15 +43,14 @@ public class SudokuGrid {
         System.out.println("+-----------------------+");
         for (int r = 0; r < SIZE; r++) {
             for (int c = 0; c < SIZE; c++) {
-                // Print grid with spacing and dividers
                 if (c == 0 || c == 3 || c == 6) {
                     System.out.print("| ");
                 }
                 System.out.print(grid[r][c] == 0 ? " " : grid[r][c]);
                 System.out.print(" ");
             }
-            System.out.print("| ");
-            System.out.println();  // Move to the next row
+            System.out.print("|");
+            System.out.println(); 
             if (r == 2 || r == 5 || r == 8) {
                 System.out.println("+-----------------------+");
             }
