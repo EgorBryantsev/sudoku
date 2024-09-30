@@ -14,6 +14,10 @@ public class SudokuGrid {
         }
     }
 
+    public SudokuGrid() {
+        grid = new int[SIZE][SIZE];  // Initializes an empty grid
+    }
+
     public SudokuGrid copy() {
         int[][] newGrid = new int[SIZE][SIZE];
         for (int r = 0; r < SIZE; r++) {
