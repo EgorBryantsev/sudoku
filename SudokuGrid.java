@@ -8,7 +8,10 @@ public class SudokuGrid {
     private int rEmpty = -1, cEmpty = -1;
 
     public SudokuGrid(int[][] sudoku) {
-        grid = sudoku;
+        grid = new int[SIZE][SIZE];
+        for (int r = 0; r < SIZE; r++) {
+            System.arraycopy(sudoku[r], 0, grid[r], 0, SIZE);
+        }
     }
 
     public SudokuGrid copy() {
