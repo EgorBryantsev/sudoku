@@ -1,5 +1,16 @@
 import java.awt.Point;
 
+/**
+ * SudokuGrid.
+ * 
+ * 
+ * 
+ * @author Milan Versteegh
+ * @ID 2136279
+ * @author Egor Bryantsev
+ * @ID 2087782
+ */
+
 public class SudokuGrid {
     public static final int SIZE = 9;
     public static final int DIGIT_RANGE = 9;

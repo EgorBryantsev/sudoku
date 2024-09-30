@@ -1,5 +1,16 @@
 import java.awt.Point;
 
+/**
+ * SudokuSolver.
+ * 
+ * 
+ * 
+ * @author Milan Versteegh
+ * @ID 2136279
+ * @author Egor Bryantsev
+ * @ID 2087782
+ */
+
 public class SudokuSolver {
     private SudokuGrid grid;
 
