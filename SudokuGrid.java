@@ -46,9 +46,8 @@ public class SudokuGrid {
                 if (c == 0 || c == 3 || c == 6) {
                     System.out.print("|");
                 }
-                System.out.print(grid[r][c] == 0 ? " " : grid[r][c]);
-                System.out.print(" ");
-            }
+                System.out.print(grid[r][c] == 0 ? " " : grid[r][c]);  
+            } 
             System.out.print("|");
             System.out.println(); 
             if (r == 2 || r == 5 || r == 8) {
