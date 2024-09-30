@@ -47,6 +47,9 @@ public class SudokuGrid {
                     System.out.print("|");
                 }
                 System.out.print(grid[r][c] == 0 ? " " : grid[r][c]);  
+                if (c % 3 != 2 && c != SIZE - 1) {
+                    System.out.print(" ");
+                }
             } 
             System.out.print("|");
             System.out.println(); 
